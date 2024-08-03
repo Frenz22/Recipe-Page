@@ -1,0 +1,105 @@
+body {
+    font-size: 16px;
+    background-color: rgba(243, 229, 216, 255);
+    font-family: sans-serif;
+}
+
+/* Styles for larger screens */
+@media (min-width: 376px) {
+    .recipe-page {
+        width: 50%;
+        background-color: hsl(0, 0%, 100%);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50px;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        border-radius: 15px;
+    }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 375px) {
+    .recipe-page {
+        width: fit-content;
+        background-color: #ffffff; /* Pure white */
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+}
+
+.recipe-page img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; 
+}
+
+.recipe-page h2 {
+    color: hsl(14, 45%, 36%);
+    margin-top: 8%;
+}
+
+.preparation-time-container {
+    margin-left: 3%;
+}
+
+.preparation-time-container h3 {
+    margin-top: 8%;
+    color: hsl(332, 51%, 32%);
+}
+
+.preparation-time-container li, .ingredients-container li, .instructions-container li {
+    margin-bottom: 10px;
+}
+
+.preparation-time-container ul, .ingredients-container ul, .instructions-container ol {
+    padding-left: 0;
+    list-style-position: inside;
+    list-style: none;
+    counter-reset: li;
+}
+
+.preparation-time-container ul li::before, .ingredients-container ul li::before {
+    content: "•";
+    color: hsl(14, 45%, 36%);
+    margin-left: 5px;
+    margin-right: 1em;
+    font-size: 20px;
+}
+
+.instructions-container ol {
+    padding-left: 0;
+}
+
+.instructions-container ol li {
+    position: relative;
+    padding-left: 30px; 
+}
+
+.instructions-container ol li::before {
+    content: counter(li) ". "; /* Adds the number and period */
+    counter-increment: li;
+    position: absolute;
+    left: 0;
+    color: hsl(14, 45%, 36%);
+    width: 30px; 
+}
+
+.nutrition-facts {
+    display: flex;
+}
+
+.nutrition-facts .value {
+    width: 40%;
+    margin-left: 5%;
+}
+
+.nutrition-facts .serving {
+    width: 50%;
+    color: hsl(14, 45%, 36%);
+    font-weight: bolder;
+}
